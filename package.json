@@ -1,0 +1,22 @@
+{
+  "name": "brut",
+  "version": "1.0.0",
+  "description": "Brut",
+  "main": "gulpfile.js",
+  "author": "iDimov",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-data": "^1.2.0",
+    "gulp-font": "^1.0.4",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-pug": "^3.0.3",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^2.1.2"
+  }
+}
