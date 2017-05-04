@@ -26,7 +26,7 @@ var paths = {
   img: './public/images/',
   fonts: './src/fonts/',
   font: './public/fonts/',
-  data: './src/_data/'
+  data: './src/templates/data/'
 };
 
 /**

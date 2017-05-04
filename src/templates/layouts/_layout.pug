@@ -1,0 +1,16 @@
+include ../partials/bem
+doctype html
+html
+  head
+    block head_end
+    include ../partials/head
+  body
+    include ../partials/nav
+    block content
+    //- +b.block1
+    //-   +e.element1 Foo
+    //-     +b.block2
+    //-   +e.A(href="#bar").element Bar
+    //-     +e.element2 Baz
+
+    block body_end
