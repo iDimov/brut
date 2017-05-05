@@ -52,14 +52,14 @@ gulp.task('pug', function () {
 /**
  * Recompile .pug files and live reload the browser
  */
-gulp.task('rebuild', ['pug'], function () {
+gulp.task('rebuild', ['pug', 'js'], function () {
   browserSync.reload();
 });
 
 /**
  * Wait for pug and sass tasks, then launch the browser-sync Server
  */
-gulp.task('browser-sync', ['sass', 'pug', 'images', 'fonts'], function () {
+gulp.task('browser-sync', ['sass', 'pug', 'images', 'fonts', 'js'], function () {
   browserSync({
     server: {
       baseDir: paths.public
@@ -75,8 +75,7 @@ gulp.task('browser-sync', ['sass', 'pug', 'images', 'fonts'], function () {
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '*.sass')
     .pipe(sass({
-      includePaths: [paths.sass],
-
+      includePaths: [paths.sass]
     }))
     .on('error', sass.logError)
     .pipe(prefix(['last 4 versions'], {
@@ -95,6 +94,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
   gulp.watch(paths.sass + '**/*.sass', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
+  gulp.watch('./src/**/*.js', ['js']);
 });
 
 gulp.task('images', function() {
@@ -105,6 +105,7 @@ gulp.task('images', function() {
         }))
         .pipe(gulp.dest(paths.img)); // Выгружаем на продакшен
 });
+
 gulp.task('js', function(){
   gulp.src(paths.js + '/**/*.js')
   .pipe(uglify())
@@ -114,7 +115,7 @@ gulp.task('js', function(){
 
 
 gulp.task('fonts', function() {
-    return gulp.src(paths.fonts + '**/*.woff') 
+    return gulp.src(paths.fonts + ('**/*.woff', '**/*.woff2') ) 
         .pipe(gulp.dest(paths.font)); 
 });
 

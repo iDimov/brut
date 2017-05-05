@@ -1,0 +1,18 @@
+extends templates/layouts/_layout
+
+block content
+
+   +b.wrap
+      +e.gallery
+      +e.content-right
+         +e.first-column
+            +e('h1').h1-title= hone
+         +e.second-column
+            +e.digitsc
+            +e('img').pic-1(alt="img" src='/images/2/pic_1.jpg')
+         +e.third-column
+            +e.text
+               +e('p').plain-text Brutalism became popular with governmental and institutional clients, with numerous examples in Britain, France, Germany, Japan, the United States, Italy, Canada, Brazil, the Philippines, Israel and Australia. 
+
+
+block body_end

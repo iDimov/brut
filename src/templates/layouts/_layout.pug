@@ -7,10 +7,8 @@ html
   body
     include ../partials/nav
     block content
-    //- +b.block1
-    //-   +e.element1 Foo
-    //-     +b.block2
-    //-   +e.A(href="#bar").element Bar
-    //-     +e.element2 Baz
-
     block body_end
+    block scripts
+      script(src="/js/jquery.js")
+      script(src="/js/tweenMax.js")
+      script(type="text/javascript" src="js/scripts.js")
