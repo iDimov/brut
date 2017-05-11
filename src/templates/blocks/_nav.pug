@@ -1,0 +1,46 @@
+mixin b_nav(white)
+    +b('nav').navigation
+        if white
+            +e('ul').menu-w
+                a(href="index.html" class="menu-link")
+                    li(class="menu-item")
+                        span /00 
+                        | Main
+                a(href="about.html" class="menu-link")
+                    li(class="menu-item")
+                        span /01 
+                        | About
+                a(href="#" class="menu-link")
+                    li(class="menu-item")
+                        span /02 
+                        | History
+                a(href="#" class="menu-link")
+                    li(class="menu-item")
+                        span /03 
+                        | Gallery
+                a(href="#" class="menu-link")
+                    li(class="menu-item")
+                        span /04 
+                        | Learn more
+        else 
+            +e('ul').menu
+                a(href="index.html" class="menu-link")
+                    li(class="menu-item")
+                        span /00 
+                        | Main
+                a(href="about.html" class="menu-link")
+                    li(class="menu-item")
+                        span /01 
+                        | About
+                a(href="#" class="menu-link")
+                    li(class="menu-item")
+                        span /02 
+                        | History
+                a(href="#" class="menu-link")
+                    li(class="menu-item")
+                        span /03 
+                        | Gallery
+                a(href="#" class="menu-link")
+                    li(class="menu-item")
+                        span /04 
+                        | Learn more

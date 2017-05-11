@@ -1,10 +1,12 @@
 extends templates/layouts/_layout
+    
 
 block content
-
-	div(class="white-line")
-	div(class="intro")
-		div(class="intro-text")
-			p(class="intro-info") Habitat 67, Montreal, Quebec (Moshe Safdie, 1967)	
-			h1= hone
+	+b_nav
+	
+	+b.white-line
+	+b.intro
+		+e.intro-text
+			+e('p').intro-info Habitat 67, Montreal, Quebec (Moshe Safdie, 1967)	
+			+e('h1').h1-title= hone
 block body_end
