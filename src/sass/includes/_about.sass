@@ -1,9 +1,9 @@
 .wrap
    width: 100vw
+   position: fixed
    height: 100vh
    display: flex
    justify-content: space-between
-   align-items: center
    &__plain-text
       font-family: 'texgyreherosbold'
       font-size: 1em
@@ -24,6 +24,7 @@
       display: flex
       justify-content: space-between
       padding-right: 87px
+      padding-top: 5vh
    &__name
       font-family: 'texgyreherosbold'
       padding-top: 10px
@@ -63,3 +64,31 @@
    &__second-column,
    &__third-column
       padding: 0 10px
+.timeline
+      position: fixed
+      display: flex
+      bottom: 0px
+      height: 100px
+      background-color: #282828
+      z-index: 9
+      margin-left: 7vw
+      max-width: 60vw
+      color: white
+      padding: 30px 30px 30px 60px
+      align-items: center
+      justify-content: space-between
+      &__year
+            font-family: 'Consolas'
+            font-size: 11px
+            line-height: .9
+            span
+                  display: block
+                  font-size: 4em
+                  font-family: 'texgyreheroscnbold'
+      &__text
+            padding-left: 40px
+            font-family: 'Consolas'
+            font-size: 13px
+            line-height: 1.1
+
+

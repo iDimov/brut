@@ -5,6 +5,7 @@ $(function () {
    var into_info = $('.intro__intro-info');
    var about_columns = $('.wrap__content-right > div');
    var about_gallery = $('.wrap__gallery');
+   var timeline = $('.timeline');
 
    TweenMax.to(white_line, 2, { height: '100vh', ease: Power4.easeOut, delay: 1 });
    TweenMax.to(into_h1, 1.5, { y: -161, ease: Power4.easeInOut, delay: 1.3 });
@@ -16,8 +17,9 @@ $(function () {
 
    var tl = new TimelineMax();
    tl
-      .fromTo(about_gallery, 1, {autoAlpha: 0, width:0, x: '50%'}, {autoAlpha: 1, width: '45%', x: '0%'})
-      .staggerFromTo(about_columns, 1, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, 0.4);
+      .fromTo(about_gallery, 1, {autoAlpha: 0, width:0, x: '50%'}, {autoAlpha: 1, width: '48%', x: '0%'})
+      .staggerFromTo(about_columns, 1, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, 0.4)
+      .fromTo(timeline, 1, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, '-=1');
 
    Barba.Pjax.start();
    Barba.Dispatcher.on('newPageReady', function (currentStatus, oldStatus, container) {
@@ -27,6 +29,7 @@ $(function () {
       var into_info = $('.intro__intro-info');
       var about_columns = $('.wrap__content-right > div');
       var about_gallery = $('.wrap__gallery');
+      var timeline = $('.timeline');
 
       TweenMax.to(white_line, 2, { height: '100vh', ease: Power4.easeOut, delay: 1 });
       TweenMax.to(into_h1, 1.5, { y: -161, ease: Power4.easeInOut, delay: 1.3 });
@@ -34,8 +37,9 @@ $(function () {
       
    var tl = new TimelineMax();
    tl
-      .fromTo(about_gallery, 1, {autoAlpha: 0, width:0, x: '50%'}, {autoAlpha: 1, width: '45%', x: '0%'})
-      .staggerFromTo(about_columns, 1, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, 0.4);
+      .fromTo(about_gallery, 1, {autoAlpha: 0, width:0, x: '50%'}, {autoAlpha: 1, width: '48%', x: '0%'})
+      .staggerFromTo(about_columns, 1, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, 0.4)
+      .fromTo(timeline, 1, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, '-=1');
    });
 
 
