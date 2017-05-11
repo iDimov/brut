@@ -3,10 +3,11 @@ extends templates/layouts/_layout
 
 block content
 	+b_nav
-	
-	+b.white-line
-	+b.intro
-		+e.intro-text
-			+e('p').intro-info Habitat 67, Montreal, Quebec (Moshe Safdie, 1967)	
-			+e('h1').h1-title= hone
+	+b(id='barba-wrapper')
+		+b.barba-container 
+			+b.white-line
+			+b.intro
+				+e.intro-text
+					+e('p').intro-info Habitat 67, Montreal, Quebec (Moshe Safdie, 1967)	
+					+e('h1').h1-title= hone
 block body_end

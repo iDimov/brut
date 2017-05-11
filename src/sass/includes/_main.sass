@@ -6,23 +6,30 @@
    justify-content: center
    align-items: center
    background-image: url(/images/bg_1.jpg)
-   background-size: cover
+   background-size: 100%
+   background-position: 50% 50%
+   background-repeat: no-repeat
    &__intro-text
       overflow: hidden
       line-height: .9
+      height: 12em
    &__h1-title
       text-align: center
       font-size: 12em
       color: white
       font-family: 'texgyreherosbold'
+      line-height: 1
+      bottom: -161px
+      position: relative
    &__intro-info
       position: absolute
       color: rgba(255, 255, 255, 0.15)
       font-family: 'Consolas'
       top: 13%
-      padding-left: 1%
+      padding-left: 57px
+      opacity: 0
 .white-line
-   height: 100vh
+   height: 0vh
    background-color: rgba(255, 255, 255, 0.1)
    width: 29vw
    position: absolute
