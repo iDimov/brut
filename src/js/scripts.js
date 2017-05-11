@@ -17,7 +17,7 @@ $(function () {
    var tl = new TimelineMax();
    tl
       .fromTo(about_gallery, 1, {autoAlpha: 0, width:0, x: '50%'}, {autoAlpha: 1, width: '45%', x: '0%'})
-      .staggerFromTo(about_columns, 1.5, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, 0.4);
+      .staggerFromTo(about_columns, 1, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, 0.4);
 
    Barba.Pjax.start();
    Barba.Dispatcher.on('newPageReady', function (currentStatus, oldStatus, container) {
@@ -35,7 +35,7 @@ $(function () {
    var tl = new TimelineMax();
    tl
       .fromTo(about_gallery, 1, {autoAlpha: 0, width:0, x: '50%'}, {autoAlpha: 1, width: '45%', x: '0%'})
-      .staggerFromTo(about_columns, 1.5, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, 0.4);
+      .staggerFromTo(about_columns, 1, {autoAlpha: 0, y: 40}, {autoAlpha: 1, y: 0}, 0.4);
    });
 
 
