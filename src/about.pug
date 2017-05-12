@@ -4,8 +4,8 @@ extends templates/layouts/_layout
 block content
 
    +b_nav(true)
-   +b(id='barba-wrapper' data-namespace="aboutpage")
-      +b.barba-container 
+   +b(id='barba-wrapper')
+      +b(data-namespace='aboutpage').barba-container 
          +b.timeline
             +e.year Timeline
                span 1950s
@@ -27,6 +27,3 @@ block content
                      +e('p').plain-text Brutalism became popular with governmental and institutional clients, with numerous examples in Britain, France, Germany, Japan, the United States, Italy, Canada, Brazil, the Philippines, Israel and Australia. 
                      +e('p').cons-text Examples are typically massive in character (even when not large), fortress-like, with a predominance of exposed concrete construction, or in the case of the "brick brutalists," ruggedly combine detailed brickwork and concrete.
                      +e('p').cons-text There is often an emphasis on graphically expressing in the external elevations and in the whole-site architectural plan the main functions and people-flows of the buildings.Brutalism became popular for educational buildings (especially university buildings), but was relatively rare for corporate projects.
-
-
-block body_end
