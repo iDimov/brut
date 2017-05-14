@@ -1,14 +1,26 @@
 // 00 Main
+.intro-bg
+    background-image: url(/images/bg_1.jpg)
+    background-size: cover
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    -ms-transform: scale(0.9)
+    transform: scale(0.9)
+    height: 130vh
+    z-index: -4
+    position: fixed
+    top: -173px
+    width: 123%
+    left: -220px
+    overflow: hidden
+//     transition: all 1s ease
 .intro
    width: 100vw
    height: 100vh
    display: flex
    justify-content: center
    align-items: center
-   background-image: url(/images/bg_1.jpg)
-   background-size: 102%
-   background-position: 50% 50%
-   background-repeat: no-repeat
+   background: transparent
    &__intro-text
       overflow: hidden
       line-height: .9
