@@ -52,7 +52,7 @@ gulp.task('pug', function () {
 /**
  * Recompile .pug files and live reload the browser
  */
-gulp.task('rebuild', ['pug', 'js'], function () {
+gulp.task('rebuild', ['pug', 'js', 'sass'], function () {
   browserSync.reload();
 });
 
@@ -121,7 +121,7 @@ gulp.task('fonts', function() {
 
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug']);
+gulp.task('build', ['sass', 'pug', 'js', 'fonts', 'images']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
