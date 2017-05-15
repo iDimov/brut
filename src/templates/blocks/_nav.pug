@@ -4,23 +4,23 @@ mixin b_nav(white)
         if white
             - classes = '_w'
         +e('ul').menu(class=classes)
-            a(href="index.html" class="menu-link")
-                li(class="menu-item")
+            li(class="menu-item")
+                a(href="index.html" class="menu-link")
                     span /00 
                     | Main
-            a(href="about.html" class="menu-link")
-                li(class="menu-item")
+            li(class="menu-item")
+                a(href="about.html" class="menu-link")
                     span /01 
                     | About
-            a(href="#" class="menu-link")
-                li(class="menu-item")
+            li(class="menu-item")
+                a(href="history.html" class="menu-link")
                     span /02 
                     | History
-            a(href="#" class="menu-link")
-                li(class="menu-item")
+            li(class="menu-item")
+                a(href="#" class="menu-link")
                     span /03 
                     | Gallery
-            a(href="#" class="menu-link")
-                li(class="menu-item")
+            li(class="menu-item")
+                a(href="#" class="menu-link")
                     span /04 
                     | Learn more

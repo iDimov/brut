@@ -30,8 +30,7 @@ var paths = {
 };
 
 /**
- * Compile .pug files and pass in data from json file
- * matching file name. index.pug - index.pug.json
+Компиляция pug + отдельно дата
  */
 gulp.task('pug', function () {
   return gulp.src('./src/*.pug')

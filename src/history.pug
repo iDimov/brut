@@ -1,0 +1,29 @@
+extends templates/layouts/_layout
+
+
+block content
+
+   +b_nav(true)
+   +b(id='barba-wrapper')
+      +b(data-namespace='history').barba-container 
+         +b.timeline.h
+            +e.year Timeline
+               span 1950s
+            +e.text The term "brutalism" was originally coined by the Swedish architect Hans Asplund to describe Villa Göth in Uppsala, designed in 1949 by his contemporaries Bengt Edman and Lennart Holm.
+         +b.wrap.h
+            +e.gallery
+            +e.content-right
+               +e.first-column
+                  +e('h1').h1-title= hone
+               +e.second-column
+                  +e.digits /02
+                  +e('img').pic-1(alt="img" src='/images/3/pic_1.jpg')
+                  +e.hr
+                  +e('p').name Le Corbusier
+                     span 1887 – 1965
+                  +e('p').cons-text In the case of the "brick brutalists," ruggedly combine detailed brickwork and concrete.
+               +e.third-column
+                  +e.text
+                     +e('p').plain-text Brutalism became popular with governmental and institutional clients, with numerous examples in Britain, France, Germany, Japan, the United States, Italy, Canada, Brazil, the Philippines, Israel and Australia. 
+                     +e('p').cons-text Examples are typically massive in character (even when not large), fortress-like, with a predominance of exposed concrete construction, or in the case of the "brick brutalists," ruggedly combine detailed brickwork and concrete.
+                     +e('p').cons-text There is often an emphasis on graphically expressing in the external elevations and in the whole-site architectural plan the main functions and people-flows of the buildings.Brutalism became popular for educational buildings (especially university buildings), but was relatively rare for corporate projects.
