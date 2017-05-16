@@ -1,4 +1,3 @@
-/*global require*/
 "use strict";
 
 var imagemin = require('gulp-imagemin');
@@ -11,11 +10,6 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   browserSync = require('browser-sync');
 
-
-
-/*
- * Directories here
- */
 var paths = {
   public: './public/',
   sass: './src/sass/',
@@ -29,9 +23,6 @@ var paths = {
   data: './src/templates/data/'
 };
 
-/**
-Компиляция pug + отдельно дата
- */
 gulp.task('pug', function () {
   return gulp.src('./src/*.pug')
     .pipe(data(function (file) {
@@ -45,19 +36,10 @@ gulp.task('pug', function () {
     .pipe(gulp.dest(paths.public));
 });
 
-
-
-
-/**
- * Recompile .pug files and live reload the browser
- */
 gulp.task('rebuild', ['pug', 'js', 'sass'], function () {
   browserSync.reload();
 });
 
-/**
- * Wait for pug and sass tasks, then launch the browser-sync Server
- */
 gulp.task('browser-sync', ['sass', 'pug', 'images', 'fonts', 'js'], function () {
   browserSync({
     server: {
@@ -67,10 +49,6 @@ gulp.task('browser-sync', ['sass', 'pug', 'images', 'fonts', 'js'], function () 
   });
 });
 
-/**
- * Compile .sass files into public css directory With autoprefixer no
- * need for vendor prefixes then live reload the browser.
- */
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '*.sass')
     .pipe(sass({
@@ -86,10 +64,6 @@ gulp.task('sass', function () {
     }));
 });
 
-/**
- * Watch sass files for changes & recompile
- * Watch .pug files run pug-rebuild then reload BrowserSync
- */
 gulp.task('watch', function () {
   gulp.watch(paths.sass + '**/*.sass', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
@@ -97,12 +71,12 @@ gulp.task('watch', function () {
 });
 
 gulp.task('images', function() {
-    return gulp.src(paths.images + '**/*.jpg') // Берем все изображения 
+    return gulp.src(paths.images + '**/*.jpg') 
         .pipe(imagemin({  
             interlaced: true,
             progressive: true
         }))
-        .pipe(gulp.dest(paths.img)); // Выгружаем на продакшен
+        .pipe(gulp.dest(paths.img)); 
 });
 
 gulp.task('js', function(){
@@ -112,19 +86,11 @@ gulp.task('js', function(){
 
 });
 
-
 gulp.task('fonts', function() {
     return gulp.src(paths.fonts + ('**/*.woff', '**/*.woff2') ) 
         .pipe(gulp.dest(paths.font)); 
 });
 
-
-// Build task compile sass and pug.
 gulp.task('build', ['sass', 'pug', 'js', 'fonts', 'images']);
 
-/**
- * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync then watch
- * files for changes
- */
 gulp.task('default', ['browser-sync', 'watch']);
