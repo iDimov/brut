@@ -31,7 +31,7 @@ $(function () {
                   .to($bg, 5, {
                         scale: 1,
                         ease: Power2.easeOut
-                  }, '-=1.4');
+                  }, '-=1');
       };
 
       var aboutIn = function () {
@@ -88,6 +88,7 @@ $(function () {
                   var about_columns = $('.wrap__content-right > div');
                   var about_gallery = $('.wrap__gallery');
                   var timeline = $('.timeline');
+                  var $navigationMenu = $('.navigation');
                   var namespaceOld = $oldContainer.data('namespace');
 
                   $(document).trigger('pageLoading', [$newContainer]);
@@ -108,6 +109,11 @@ $(function () {
                                     y: 161,
 
                               }, '-=.9')
+                              .to($navigationMenu, 1.1, {
+                                    x: 60,
+                                    autoAlpha: 0,
+                                    ease: Power3.easeInOut
+                              }, '-=.5')
                               .to($into_info, 1, {
                                     x: 40,
                                     autoAlpha: 0
@@ -127,6 +133,11 @@ $(function () {
                                     y: 50,
                                     ease: Power4.easeOut
                               }, '.2', '-=.3')
+                              .to($navigationMenu, 1.1, {
+                                    x: 60,
+                                    autoAlpha: 0,
+                                    ease: Power3.easeInOut
+                              }, '-=1.5')
                               .to(timeline, 1, {
                                     autoAlpha: 0,
                                     y: 40,
@@ -147,15 +158,22 @@ $(function () {
       $(document).on('pageLoading', function (e, $page) {
             var namespace = $page.data('namespace');
             if (namespace === 'homepage') {
-                  $(".menu-item").removeClass('active');
+                
                   $("nav ul").removeClass('navigation__menu_w');
                   $("nav ul").addClass('navigation__menu');
-                  $(".menu-item:contains('Main')").addClass('active');
             }
       });
 
       $(document).on('pageLoaded', function (e, $page) {
             var namespace = $page.data('namespace');
+            var url = location.pathname;
+            if(url === "/about.html") {
+                  $('.menu-link').removeClass('active');
+                  $('.menu-link:contains("About")').addClass('active');
+            } else if(url === "/index.html") {
+                  $('.menu-link').removeClass('active');
+                  $('.menu-link:contains("Main")').addClass('active');
+            }
 
             if (namespace === 'homepage') {
                   $("nav ul").hide();
@@ -167,7 +185,6 @@ $(function () {
                   $("nav ul").hide();
                   $("nav ul").removeClass('navigation__menu');
                   $("nav ul").addClass('navigation__menu_w');
-                  $(".menu-item:contains('About')").addClass('active');
                   $("nav ul").show();
                   aboutIn();
             }
