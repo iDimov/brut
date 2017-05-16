@@ -146,6 +146,32 @@ $(function () {
                               }, '-=1')
                               .to($oldContainer, .5, { autoAlpha: 0 })
                               .fromTo($newContainer, .5, { autoAlpha: 0 }, { autoAlpha: 1 });
+                  } else if (namespaceOld === 'history') {
+                        tl
+                              .to(about_gallery, .5, {
+                                    autoAlpha: 0,
+                                    width: 0,
+                                    x: '0%',
+                                    ease: Power4.easeOut
+                              })
+                              .staggerTo(about_columns, 1, {
+                                    autoAlpha: 0,
+                                    y: 50,
+                                    ease: Power4.easeOut
+                              }, '.2', '-=.3')
+                              .to($navigationMenu, 1.1, {
+                                    x: 60,
+                                    autoAlpha: 0,
+                                    ease: Power3.easeInOut
+                              }, '-=1.5')
+                              .to(timeline, 1, {
+                                    autoAlpha: 0,
+                                    y: 40,
+                                    ease: Power4.easeOut
+
+                              }, '-=1')
+                              .to($oldContainer, .5, { autoAlpha: 0 })
+                              .fromTo($newContainer, .5, { autoAlpha: 0 }, { autoAlpha: 1 });
                   }
             }
       });
@@ -173,19 +199,22 @@ $(function () {
             } else if(url === "/index.html") {
                   $('.menu-link').removeClass('active');
                   $('.menu-link:contains("Main")').addClass('active');
+            } else if(url === "/history.html") {
+                  $('.menu-link').removeClass('active');
+                  $('.menu-link:contains("History")').addClass('active');
             }
 
             if (namespace === 'homepage') {
-                  $("nav ul").hide();
                   $("nav ul").removeClass('navigation__menu_w');
                   $("nav ul").addClass('navigation__menu');
-                  $("nav ul").show();
                   homeIn();
             } else if (namespace === 'aboutpage') {
-                  $("nav ul").hide();
                   $("nav ul").removeClass('navigation__menu');
                   $("nav ul").addClass('navigation__menu_w');
-                  $("nav ul").show();
+                  aboutIn();
+            } else if (namespace === 'history') {
+                  $("nav ul").removeClass('navigation__menu');
+                  $("nav ul").addClass('navigation__menu_w');
                   aboutIn();
             }
       });
